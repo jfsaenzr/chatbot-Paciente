@@ -194,23 +194,9 @@ $form.addEventListener('submit', async (event) => {
             reply = "Cuéntame, ¿en que puedo ayudarte hoy, cuál es tú motivo de consulta para esta cita médica? IA"
         }
         pregunta = "17";
-    } else if (pregunta == "17") {
-
-        for await (const chunk of chunks) {
-            $botMessage.textContent = "¿Desde cuándo has estado sintiéndote así? IA"
-            reply = ""
-        }
-        pregunta = "18";
-    } else if (pregunta == "18") {
-
-        for await (const chunk of chunks) {
-            $botMessage.textContent = "¿Ha cambiado algo recientemente en tú vida que pueda estar afectándote? IA"
-            reply = "¿Ha cambiado algo recientemente en tú vida que pueda estar afectándote? IA"
-        }
-        pregunta = "";
     }
 
-    else if (pregunta == "") {
+    else if (pregunta == "17") {
         for await (const chunk of chunks) {
             const choice = chunk.choices[0]
             const content = choice?.delta?.content ?? ""
