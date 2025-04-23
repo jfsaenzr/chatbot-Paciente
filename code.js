@@ -26,7 +26,7 @@ let pregunta = "1"
 
 const SELECTED_MODEL = 'Llama-3.2-1B-Instruct-q4f16_1-MLC';// vram_required_MB: 879.04
 //const SELECTED_MODEL = 'Llama-3-8B-Instruct-q4f32_1-MLC-1k' // vram_required_MB: 5295.7
-//const SELECTED_MODEL = 'Llama-3-8B-Instruct-q4f32_1-MLC';// 
+//const SELECTED_MODEL = 'Llama-3-8B-Instruct-q4f32_1-MLC';// s
 
 const engine = await CreateWebWorkerMLCEngine(
     new Worker('./worker.js', { type: 'module' }),
@@ -106,15 +106,15 @@ $form.addEventListener('submit', async (event) => {
     } else if (pregunta == "4") {
 
         for await (const chunk of chunks) {
-            $botMessage.textContent = "Paciente a validar: Pepito Perez, Documento entregado: 12345678, Cita agendada: Medicina General - Digita SI para confirmar datos."
-            reply = "Paciente a validar: Pepito Perez, Documento entregado: 12345678, Cita agendada: Medicina General - Digita SI para confirmar datos."
+            $botMessage.textContent = "Paciente a validar: Johan Saenz Ramos, Documento entregado: 1032358285, Cita agendada: Medicina General - Digita SI para confirmar datos."
+            reply = "Paciente a validar: Johan Saenz Ramos, Documento entregado: 123456, Cita agendada: Medicina General - Digita SI para confirmar datos."
         }
         pregunta = "5";
     } else if (pregunta == "5") {
 
         for await (const chunk of chunks) {
-            $botMessage.textContent = "Para empezar, voy a confirmar algunos datos básicos. Por favor indícame si la información que tengo es correcta o si necesitas actualizar algo. Nombre completo del paciente: Pepito Andres Perez Peláez Documento de identidad:C.C. 12345678 Fecha de nacimiento: 01 Enero 1984 Dirección de residencia: Calle 10 # 80 – 54 Bogotá Cundinamarca Numero de contacto: 3003010101 Persona de contacto en caso de emergencia: Maria Jose móvil. 3003020202 Digita SI, si la información es correcta, NO para actualizar información."
-            reply = "Para empezar, voy a confirmar algunos datos básicos. Por favor indícame si la información que tengo es correcta o si necesitas actualizar algo. Nombre completo del paciente: Pepito Andres Perez Peláez Documento de identidad:C.C. 12345678 Fecha de nacimiento: 01 Enero 1984 Dirección de residencia: Calle 10 # 80 – 54 Bogotá Cundinamarca Numero de contacto: 3003010101 Persona de contacto en caso de emergencia: Maria Jose móvil. 3003020202 Digita SI, si la información es correcta, NO para actualizar información."
+            $botMessage.textContent = "Para empezar, voy a confirmar algunos datos básicos. Por favor indícame si la información que tengo es correcta o si necesitas actualizar algo. Nombre completo del paciente: Johan Saenz Ramos - Documento de identidad:C.C. 1032358285 Fecha de nacimiento: 21 Febrero 1986 Dirección de residencia: Dg 68 a sur # 14r – 35 Bogotá Cundinamarca Numero de contacto: 3143196109 Persona de contacto en caso de emergencia: Maria Jose móvil. 3003020202 Digita SI, si la información es correcta, NO para actualizar información."
+            reply = "Para empezar, voy a confirmar algunos datos básicos. Por favor indícame si la información que tengo es correcta o si necesitas actualizar algo. Nombre completo del paciente: Pepito Andres Perez Peláez Documento de identidad:C.C. 1032358285 Fecha de nacimiento: 01 Enero 1984 Dirección de residencia: Calle 10 # 80 – 54 Bogotá Cundinamarca Numero de contacto: 3003010101 Persona de contacto en caso de emergencia: Maria Jose móvil. 3003020202 Digita SI, si la información es correcta, NO para actualizar información."
         }
         pregunta = "6";
     } else if (pregunta == "6") {
@@ -202,7 +202,7 @@ $form.addEventListener('submit', async (event) => {
             const content = choice?.delta?.content ?? ""
             reply += content
 
-            $botMessage.textContent = reply
+            $botMessage.textContent = reply;
         }
 
     }
@@ -219,8 +219,6 @@ $form.addEventListener('submit', async (event) => {
     $container.scrollTop = $container.scrollHeight
 
 })
-
-
 
 function addMessage(text, sender) {
     // clonar el template
