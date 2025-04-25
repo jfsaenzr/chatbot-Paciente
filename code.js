@@ -190,7 +190,7 @@ $form.addEventListener('submit', async (event) => {
     } else if (pregunta == "16") {
 
         for await (const chunk of chunks) {
-            $botMessage.textContent = "Cuéntame, ¿en que puedo ayudarte hoy, cuál es tú motivo de consulta para esta cita médica? IA"
+            $botMessage.textContent = "Cuéntame, ¿en que puedo ayudarte hoy, cuál es tú motivo de consulta para esta cita médica?"
             reply = "Cuéntame, ¿en que puedo ayudarte hoy, cuál es tú motivo de consulta para esta cita médica? IA"
         }
         pregunta = "17";
